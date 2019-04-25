@@ -1,5 +1,5 @@
 {
-  "main.css": "/static/css/main.a3e12315.chunk.css",
+  "main.css": "/static/css/main.f52031f0.chunk.css",
   "main.js": "/static/js/main.b206db1a.chunk.js",
   "main.js.map": "/static/js/main.b206db1a.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
@@ -7,9 +7,9 @@
   "static/js/2.2095fb4f.chunk.js": "/static/js/2.2095fb4f.chunk.js",
   "static/js/2.2095fb4f.chunk.js.map": "/static/js/2.2095fb4f.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.bdf5fc0c6d2c9d8852761a5de988b9ad.js": "/precache-manifest.bdf5fc0c6d2c9d8852761a5de988b9ad.js",
+  "precache-manifest.c90aeb7c2a6d4d84c52c5723661ce3c9.js": "/precache-manifest.c90aeb7c2a6d4d84c52c5723661ce3c9.js",
   "service-worker.js": "/service-worker.js",
-  "static/css/main.a3e12315.chunk.css.map": "/static/css/main.a3e12315.chunk.css.map",
+  "static/css/main.f52031f0.chunk.css.map": "/static/css/main.f52031f0.chunk.css.map",
   "static/media/C64_Pro_Mono-STYLE.woff2": "/static/media/C64_Pro_Mono-STYLE.2712b79c.woff2",
   "static/media/C64_Pro_Mono-STYLE.woff": "/static/media/C64_Pro_Mono-STYLE.8057d431.woff",
   "static/media/Project.scss": "/static/media/calendar.525c6713.svg",
