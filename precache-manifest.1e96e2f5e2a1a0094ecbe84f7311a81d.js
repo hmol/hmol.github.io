@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/static/media/C64_Pro_Mono-STYLE.2712b79c.woff2"
   },
   {
-    "revision": "8993341650374194d503a2b5f11598be",
+    "revision": "b14daf8fc084b1619071917f98cc68bb",
     "url": "/index.html"
   }
 ];
