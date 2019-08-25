@@ -1,0 +1,21 @@
+{
+  "main.css": "/static/css/main.5a49f0d3.chunk.css",
+  "main.js": "/static/js/main.5a409918.chunk.js",
+  "main.js.map": "/static/js/main.5a409918.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/js/2.13130c5a.chunk.js": "/static/js/2.13130c5a.chunk.js",
+  "static/js/2.13130c5a.chunk.js.map": "/static/js/2.13130c5a.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.d43ab833151389c0141463eb6d14ef47.js": "/precache-manifest.d43ab833151389c0141463eb6d14ef47.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.5a49f0d3.chunk.css.map": "/static/css/main.5a49f0d3.chunk.css.map",
+  "static/media/C64_Pro_Mono-STYLE.woff2": "/static/media/C64_Pro_Mono-STYLE.2712b79c.woff2",
+  "static/media/C64_Pro_Mono-STYLE.woff": "/static/media/C64_Pro_Mono-STYLE.8057d431.woff",
+  "static/media/Project.scss": "/static/media/calendar.525c6713.svg",
+  "static/media/Face.scss": "/static/media/face_terminator.6b83dde8.jpg",
+  "static/media/Adminpanel.scss": "/static/media/nightsky.eddf618f.jpg",
+  "static/media/Contactinfo.scss": "/static/media/pdf.1226fa11.png",
+  "static/media/Login.scss": "/static/media/river.97400221.jpg",
+  "static/media/Music.scss": "/static/media/tone.bdf0f9e8.svg"
+}
