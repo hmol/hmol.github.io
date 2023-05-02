@@ -10,9 +10,6 @@
             font-family: Arial, Helvetica, sans-serif;
             padding: 20px;
         }
-        @keyframes blinker {  
-          50% { opacity: 0; }
-        }
         .rule-in {
             background-color: rgb(245, 97, 97);
             display: inline-block;
@@ -43,6 +40,10 @@
             height: 30px;
             font-size: larger;
         }
+        footer {
+            margin-top: 150px;
+            color: grey;
+        }
     </style>
   </head>
   <body>
@@ -62,16 +63,17 @@
             <input type="submit" value="Valider" class="submit-button">
         </form>
         <div class="rule-in" id="rule-in0">
-            <h2>Rule in</h2>
+            <h2>Rule-in</h2>
             <p>0-times verdi >= 52 ng/L</p>
         </div>
         <div class="rule-out" id="rule-out0">
-            <h2>Rule out</h2>
+            <h2>Rule-out</h2>
             <p>0-times verdi < 5 ng/L og symptomdebut > 3t</p>
         </div>
         <div class="observation" id="observation0">
             <h2>Observation</h2>
-            <p>Øvrige verdier</p>
+            <p>5-51 ng/L eller for kort tid fra symp.debut.</p>
+            <p>(1-times prøve nødvendig for avklaring)</p>
         </div>
 
         <hr>
@@ -82,16 +84,17 @@
             <input type="submit" value="Valider" class="submit-button">
         </form>
         <div class="rule-in" id="rule-in1">
-            <h2>Rule in</h2>
+            <h2>Rule-in</h2>
             <p>0/1-times verdi endring >= 5</p>
         </div>
         <div class="rule-out" id="rule-out1">
-            <h2>Rule out</h2>
+            <h2>Rule-out</h2>
             <p>0-verdi < 12 ng/L og 0/1-times verdi < 3</p>
         </div>
         <div class="observation" id="observation1">
             <h2>Observation</h2>
-            <p>Øvrige verdier</p>
+            <p>0/1-times endring 3-4 ng/L</p>
+            <p>(4-times prøve nødvendig for avklaring)</p>
         </div>
         <hr>
         <h2>4-times prøve</h2>
@@ -101,18 +104,21 @@
             <input type="submit" value="Valider" class="submit-button">
         </form>
         <div class="rule-in" id="rule-in4">
-            <h2>Rule in</h2>
+            <h2>Rule-in</h2>
             <p>0/4-times endring >=6</p>
         </div>
         <div class="rule-out" id="rule-out4">
-            <h2>Rule out</h2>
+            <h2>Rule-out</h2>
             <p>4-times verdi < 15 ng/L og 0/4-times verdi < 4</p>
         </div>
         <div class="observation" id="observation4">
             <h2>Observation</h2>
-            <p>Øvrige verdier</p>
+            <p>0/4-times endring 4-5 ng/L</p>
         </div>
     </main>
+    <footer>
+        Av: T Johannessen (@tonjerj) og H Molnes 2023.
+    </footer>
 	<script>
         let form0 = document.getElementById("form0");
         let form1 = document.getElementById("form1");
