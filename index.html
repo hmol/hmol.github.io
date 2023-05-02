@@ -1,1 +1,214 @@
-<!doctype html><html lang="en"><head><script async src="https://www.googletagmanager.com/gtag/js?id=UA-155732908-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-155732908-1")</script><meta charset="utf-8"/><link rel="shortcut icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Henrik Molnes"/><link rel="apple-touch-icon" href="logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Henrik Molnes</title><link href="/static/css/main.7a5c6216.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(a){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],p=0,l=[];p<n.length;p++)t=n[p],Object.prototype.hasOwnProperty.call(i,t)&&i[t]&&l.push(i[t][0]),i[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(a[r]=o[r]);for(s&&s(e);l.length;)l.shift()();return c.push.apply(c,u||[]),f()}function f(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==i[u]&&(n=!1)}n&&(c.splice(r--,1),e=p(p.s=t[0]))}return e}var t={},i={1:0},c=[];function p(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return a[e].call(r.exports,r,r.exports,p),r.l=!0,r.exports}p.m=a,p.c=t,p.d=function(e,r,t){p.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},p.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},p.t=function(r,e){if(1&e&&(r=p(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(p.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)p.d(t,n,function(e){return r[e]}.bind(null,n));return t},p.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return p.d(r,"a",r),r},p.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},p.p="/";var r=window["webpackJsonpmy-app"]=window["webpackJsonpmy-app"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;f()}([])</script><script src="/static/js/2.5d65bece.chunk.js"></script><script src="/static/js/main.ff9ae214.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Troponin</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        @keyframes blinker {  
+          50% { opacity: 0; }
+        }
+        .rule-in {
+            background-color: rgb(245, 97, 97);
+            display: inline-block;
+            width: 300px;
+            display: none;
+            padding-left: 10px;
+            margin-top: 20px;
+        }
+        .rule-out {
+            background-color: rgb(112, 207, 104);
+            display: inline-block;
+            width: 300px;
+            display: none;
+            padding-left: 10px;
+            margin-top: 20px;
+        }
+        .observation {
+            background-color: rgb(234, 234, 76);
+            display: inline-block;
+            width: 300px;
+            display: none;
+            padding-left: 10px;
+            margin-top: 20px;
+        }
+        .submit-button {
+            margin-top: 15px;
+            width: 100px;
+            height: 30px;
+            font-size: larger;
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+        <h1>Høysensitiv troponin T</h1>
+        
+        <h2>0-times prøve</h2>
+        <form id="form0">
+            Verdi: <input type="number" name="value0" id="value0"> ng/L
+            <div>
+                <p>Symptomdebut > 3t?</p>
+                <input type="radio" id="symptoms_yes" name="symptoms" value="yes">
+                <label for="symptoms_yes">Ja</label>
+                <input type="radio" id="symptoms_no" name="symptoms" value="no">
+                <label for="symptoms_no">Nei</label>
+            </div>
+            <input type="submit" value="Valider" class="submit-button">
+        </form>
+        <div class="rule-in" id="rule-in0">
+            <h2>Rule in</h2>
+            <p>0-times verdi >= 52 ng/L</p>
+        </div>
+        <div class="rule-out" id="rule-out0">
+            <h2>Rule out</h2>
+            <p>0-times verdi < 5 ng/L og symptomdebut > 3t</p>
+        </div>
+        <div class="observation" id="observation0">
+            <h2>Observation</h2>
+            <p>Øvrige verdier</p>
+        </div>
+
+        <hr>
+        <h2>1-times prøve</h2>
+        <form id="form1">
+            Verdi: <input type="number" name="value1" id="value1"> ng/L
+            <br/>
+            <input type="submit" value="Valider" class="submit-button">
+        </form>
+        <div class="rule-in" id="rule-in1">
+            <h2>Rule in</h2>
+            <p>0/1-times verdi endring >= 5</p>
+        </div>
+        <div class="rule-out" id="rule-out1">
+            <h2>Rule out</h2>
+            <p>0-verdi < 12 ng/L og 0/1-times verdi < 3</p>
+        </div>
+        <div class="observation" id="observation1">
+            <h2>Observation</h2>
+            <p>Øvrige verdier</p>
+        </div>
+        <hr>
+        <h2>4-times prøve</h2>
+        <form id="form4">
+            Verdi: <input type="number" name="value4" id="value4"> ng/L
+            <br/>
+            <input type="submit" value="Valider" class="submit-button">
+        </form>
+        <div class="rule-in" id="rule-in4">
+            <h2>Rule in</h2>
+            <p>0/4-times endring >=6</p>
+        </div>
+        <div class="rule-out" id="rule-out4">
+            <h2>Rule out</h2>
+            <p>4-times verdi < 15 ng/L og 0/4-times verdi < 4</p>
+        </div>
+        <div class="observation" id="observation4">
+            <h2>Observation</h2>
+            <p>Øvrige verdier</p>
+        </div>
+    </main>
+	<script>
+        let form0 = document.getElementById("form0");
+        let form1 = document.getElementById("form1");
+        let form4 = document.getElementById("form4");
+
+        function getValue(element_id, message) {
+            let element = document.getElementById(element_id);
+            let value = element.value;
+            return value;
+        }
+
+        form0.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.getElementById('rule-out0').style.display = 'none';
+            document.getElementById('rule-in0').style.display = 'none';
+            document.getElementById('observation0').style.display = 'none';
+
+            let value0 = getValue("value0");
+            if (!value0) {
+                alert("Oppgi troponinverdi for 0-times prøven.");
+                return
+            }
+            let symptom;
+            if(document.getElementById('symptoms_yes').checked) {
+                symptom = true;
+            } else if((document.getElementById('symptoms_no').checked)){
+                symptom = false;
+            } else {
+                alert("Du må velge om symptomdebut oppstod for mer enn 3t siden, eller ikke.");
+                return
+            }
+
+            if (value0 < 5 && symptom) {
+                document.getElementById('rule-out0').style.display = 'inline-block';
+                // alert("Rule out");
+            } else if(value0 >= 52){
+                // alert("Rule in");
+                document.getElementById('rule-in0').style.display = 'inline-block';
+            } else {
+                // alert("Observation");
+                document.getElementById('observation0').style.display = 'inline-block';
+            }
+        });
+
+        form1.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.getElementById('rule-out1').style.display = 'none';
+            document.getElementById('rule-in1').style.display = 'none';
+            document.getElementById('observation1').style.display = 'none';
+    
+            let value0 = getValue("value0");
+            if (!value0) {
+                alert("Oppgi troponinverdi for 0-times prøven.");
+                return
+            }
+            let value1 = getValue("value1");
+            if (!value1) {
+                alert("Oppgi troponinverdi for 1-times prøven.");
+                return;
+            }
+            let delta = Math.abs(value1 - value0);
+            if (value0 < 12 && delta < 3) {
+                document.getElementById('rule-out1').style.display = 'inline-block';
+            } else if(delta >= 5){
+                document.getElementById('rule-in1').style.display = 'inline-block';
+            } else {
+                document.getElementById('observation1').style.display = 'inline-block';
+            }
+        });
+
+        form4.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.getElementById('rule-out4').style.display = 'none';
+            document.getElementById('rule-in4').style.display = 'none';
+            document.getElementById('observation4').style.display = 'none';
+    
+            let value0 = getValue("value0");
+            if (!value0) {
+                alert("Oppgi troponinverdi for 0-times prøven.");
+                return;
+            }
+
+            let value4 = getValue("value4");
+            if (!value4) {
+                alert("Oppgi troponinverdi for 4-times prøven.");
+                return;
+            }
+            let delta = Math.abs(value4 - value0);
+            if (value4 < 15 && delta < 4) {
+                document.getElementById('rule-out4').style.display = 'inline-block';
+            } else if(delta >= 6) {
+                document.getElementById('rule-in4').style.display = 'inline-block';
+            } else {
+                document.getElementById('observation4').style.display = 'inline-block';
+            }
+        });
+    </script>
+  </body>
+</html>
