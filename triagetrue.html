@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Troponin</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        .rule-in {
+            background-color: rgb(245, 97, 97);
+            display: inline-block;
+            display: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 20px;
+        }
+        .rule-out {
+            background-color: rgb(112, 207, 104);
+            display: inline-block;
+            display: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 20px;
+        }
+        .observation {
+            background-color: rgb(234, 234, 76);
+            display: inline-block;
+            display: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 20px;
+        }
+        .submit-button {
+            margin-top: 15px;
+            width: 100px;
+            height: 30px;
+            font-size: larger;
+        }
+        footer {
+            margin-top: 150px;
+            color: grey;
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+        <h1>Høysensitiv troponin I POC TriageTrue</h1>
+        
+        <h2>0-times prøve</h2>
+        <form id="form0">
+            Verdi: <input type="number" name="value0" id="value0" step="0.01" min="0.0"> ng/L
+            <br/>
+            <br/>
+            (Ved verdi under 4 ng/L, oppgi 3 ng/L )
+            <br/>
+            <br/>
+            <div>
+                <p>Symptomdebut > 3t?</p>
+                <input type="radio" id="symptoms_yes" name="symptoms" value="yes">
+                <label for="symptoms_yes">Ja</label>
+                <input type="radio" id="symptoms_no" name="symptoms" value="no">
+                <label for="symptoms_no">Nei</label>
+            </div>
+            <input type="submit" value="Valider" class="submit-button">
+        </form>
+        <div class="rule-in" id="rule-in0">
+            <h2>Rule-in</h2>
+            <p>0-times verdi >= 60 ng/L</p>
+        </div>
+        <div class="rule-out" id="rule-out0">
+            <h2>Rule-out</h2>
+            <p>0-times verdi < 4 ng/L og symptomdebut > 3t</p>
+        </div>
+        <div class="observation" id="observation0">
+            <h2>Observation</h2>
+            <p>3-59 ng/L eller for kort tid fra symp.debut.</p>
+            <p>(1-times prøve nødvendig for avklaring)</p>
+        </div>
+
+        <hr>
+        <h2>1-times prøve</h2>
+        <form id="form1">
+            Verdi: <input type="number" name="value1" id="value1" step="0.01" min="0.0"> ng/L
+            <br/>
+            <input type="submit" value="Valider" class="submit-button">
+        </form>
+        <div class="rule-in" id="rule-in1">
+            <h2>Rule-in</h2>
+            <p>0/1-times verdi endring >= 8</p>
+        </div>
+        <div class="rule-out" id="rule-out1">
+            <h2>Rule-out</h2>
+            <p>0-verdi < 5 ng/L og 0/1-times verdi < 3</p>
+        </div>
+        <div class="observation" id="observation1">
+            <h2>Observation</h2>
+            <p>0/1-times endring 3-7 ng/L eller > 3</p>
+            <p>Videre undersøkelse anbefalt</p>
+        </div>
+    </main>
+    <footer>
+        Av: TR Johannessen (@tonjerj) og H Molnes 2023.
+    </footer>
+	<script>
+        let form0 = document.getElementById("form0");
+        let form1 = document.getElementById("form1");
+        let form4 = document.getElementById("form4");
+
+        function getValue(element_id, message) {
+            let element = document.getElementById(element_id);
+            let value = element.value;
+            return value;
+        }
+
+        form0.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.getElementById('rule-out0').style.display = 'none';
+            document.getElementById('rule-in0').style.display = 'none';
+            document.getElementById('observation0').style.display = 'none';
+
+            let value0 = getValue("value0");
+            if (!value0) {
+                alert("Oppgi troponinverdi for 0-times prøven.");
+                return
+            }
+            let symptom;
+            if(document.getElementById('symptoms_yes').checked) {
+                symptom = true;
+            } else if((document.getElementById('symptoms_no').checked)){
+                symptom = false;
+            } else {
+                alert("Du må velge om symptomdebut oppstod for mer enn 3t siden, eller ikke.");
+                return
+            }
+
+            if (value0 < 4 && symptom) {
+                document.getElementById('rule-out0').style.display = 'inline-block';
+            } else if(value0 >= 60){
+                document.getElementById('rule-in0').style.display = 'inline-block';
+            } else {
+                document.getElementById('observation0').style.display = 'inline-block';
+            }
+        });
+
+        form1.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.getElementById('rule-out1').style.display = 'none';
+            document.getElementById('rule-in1').style.display = 'none';
+            document.getElementById('observation1').style.display = 'none';
+    
+            let value0 = getValue("value0");
+            if (!value0) {
+                alert("Oppgi troponinverdi for 0-times prøven.");
+                return
+            }
+            let value1 = getValue("value1");
+            if (!value1) {
+                alert("Oppgi troponinverdi for 1-times prøven.");
+                return;
+            }
+            let delta = Math.abs(value1 - value0);
+            console.log("delta: " + delta)
+            if (value0 < 5 && delta < 3) {
+                document.getElementById('rule-out1').style.display = 'inline-block';
+            } else if(delta >= 8){
+                document.getElementById('rule-in1').style.display = 'inline-block';
+            } else {
+                document.getElementById('observation1').style.display = 'inline-block';
+            }
+        });
+    </script>
+  </body>
+</html>
