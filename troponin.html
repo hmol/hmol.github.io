@@ -52,9 +52,9 @@
         
         <h2>0-times prøve</h2>
         <form id="form0">
-            Verdi: <input type="number" name="value0" id="value0"> ng/L
+            Verdi: <input type="number" name="value0" id="value0"> ng/L      (for verdi <5 ng/L; skriv 4)
             <div>
-                <p>Symptomdebut > 3t?</p>
+                <p>Symptomdebut over 3 timer siden?</p>
                 <input type="radio" id="symptoms_yes" name="symptoms" value="yes">
                 <label for="symptoms_yes">Ja</label>
                 <input type="radio" id="symptoms_no" name="symptoms" value="no">
@@ -64,15 +64,17 @@
         </form>
         <div class="rule-in" id="rule-in0">
             <h2>Rule-in</h2>
-            <p>0-times verdi >= 52 ng/L</p>
+            <p>0-times verdi 52 ng/L eller mer</p>
+            <p>(Innleggelse/konferering med sykehus anbefalt)</p>
         </div>
         <div class="rule-out" id="rule-out0">
             <h2>Rule-out</h2>
-            <p>0-times verdi < 5 ng/L og symptomdebut > 3t</p>
+            <p>0-times verdi <5 ng/L og minst 3 timer siden symptomdebut</p>
+            <p>(Akutt myokardskade, inkl. akutt myokardiskemi, utelukket)</p>
         </div>
         <div class="observation" id="observation0">
             <h2>Observation</h2>
-            <p>5-51 ng/L eller for kort tid fra symp.debut.</p>
+            <p>0-times verdi 5-51 ng/L ELLER mindre enn 3 timer siden symptomdebut</p>
             <p>(1-times prøve nødvendig for avklaring)</p>
         </div>
 
@@ -85,15 +87,17 @@
         </form>
         <div class="rule-in" id="rule-in1">
             <h2>Rule-in</h2>
-            <p>0/1-times verdi endring >= 5</p>
+            <p>0/1-times endring 5 ng/L eller mer</p>
+            <p>(Innleggelse/konferering med sykehus anbefalt)</p>
         </div>
         <div class="rule-out" id="rule-out1">
             <h2>Rule-out</h2>
-            <p>0-verdi < 12 ng/L og 0/1-times verdi < 3</p>
+            <p>0-times verdi 11 ng/L eller mindre OG 0/1-times endring på maks 2 ng/L</p>
+            <p>(Akutt myokardskade, inkl. akutt myokardiskemi, utelukket)</p>
         </div>
         <div class="observation" id="observation1">
             <h2>Observation</h2>
-            <p>0/1-times endring 3-4 ng/L</p>
+            <p>0-times verdi 12-51 ng/L ELLER 0/1-times endring 3-4 ng/L</p>
             <p>(4-times prøve nødvendig for avklaring)</p>
         </div>
         <hr>
@@ -105,19 +109,21 @@
         </form>
         <div class="rule-in" id="rule-in4">
             <h2>Rule-in</h2>
-            <p>0/4-times endring >=6</p>
+            <p>0/4-times endring 6 ng/L eller mer</p>
         </div>
         <div class="rule-out" id="rule-out4">
             <h2>Rule-out</h2>
-            <p>4-times verdi < 15 ng/L og 0/4-times verdi < 4</p>
+            <p>4-times verdi 14 ng/L eller mindre OG 0/4-times endring på maks 3 ng/L</p>
+            <p>(Akutt myokardskade, inkl. akutt myokardiskemi, utelukket)</p>
         </div>
         <div class="observation" id="observation4">
             <h2>Observation</h2>
-            <p>0/4-times endring 4-5 ng/L</p>
+            <p>4-times verdi mer enn 14 ng/L ELLER 0/4-times endring 4-5 ng/L</p>
+            <p>(Konferering med sykehus anbefalt, habituelt nivå?)</p>
         </div>
     </main>
     <footer>
-        Av: TR Johannessen (@tonjerj) og H Molnes 2023.
+        Av: TR Johannessen og H Molnes, 2023
     </footer>
 	<script>
         let form0 = document.getElementById("form0");
